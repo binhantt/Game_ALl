@@ -34,6 +34,11 @@ func init() {
 	// Đăng ký tất cả các model ở đây
 	// Khi thêm model mới, chỉ cần import package models và đăng ký ở đây
 	RegisterModel(&models.User{})
+	RegisterModel(&models.Product{})
+	RegisterModel(&models.ProductDetail{})
+	RegisterModel(&models.Order{})
+	RegisterModel(&models.ProductImage{})
+	RegisterModel(&models.Category{})
 	// Thêm các model khác ở đây
 	// RegisterModel(&models.Product{})
 }

@@ -3,9 +3,8 @@ package config
 import (
 	"fmt"
 	"log"
-	"time"
-
 	"github.com/gin-gonic/gin"
+	"Game_ALL_go_bankend/middleware"
 )
 
 // Server represents the HTTP server
@@ -22,34 +21,21 @@ func NewServer(port string) *Server {
 	// Create a new Gin router
 	router := gin.Default()
 
+	// Thêm middleware giới hạn và log IP
+	router.Use(middleware.LimitIPAccess())
+	router.Use(middleware.LogIPToFile())
+
 	// Add CORS middleware
 	router.Use(func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-
 		if c.Request.Method == "OPTIONS" {
 			c.AbortWithStatus(204)
 			return
 		}
 
 		c.Next()
-	})
-
-	// Add health check endpoint
-	router.GET("/health", func(c *gin.Context) {
-		status := "ok"
-		dbStatus := "connected"
-		if DB == nil {
-			dbStatus = "disconnected"
-		}
-
-		c.JSON(200, gin.H{
-			"status":    status,
-			"message":   "Server is running",
-			"database":  dbStatus,
-			"timestamp": time.Now().Unix(),
-		})
 	})
 
 	return &Server{
