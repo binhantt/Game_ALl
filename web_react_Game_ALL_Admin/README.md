@@ -1,69 +1,118 @@
-# React + TypeScript + Vite
+# Game Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, beautiful admin dashboard for game management, built with **React**, **TypeScript**, **Vite**, and **Ant Design**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ Fast development with Vite
+- 🛠️ Type safety with TypeScript
+- 🎨 Beautiful UI with Ant Design
+- 🧩 Modular layouts: MainLayout, AuthLayout, Sidebar, etc.
+- 🔒 Authentication context (AuthContext)
+- 📦 Clean folder structure for easy scaling
+- 📱 Responsive design, works on all devices
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+  components/
+    iu/
+      CustomInput.tsx
+  context/
+    AuthContext.tsx
+  layout/
+    MainLayout.tsx
+    SiderBar.tsx
+  page/
+    Home.tsx
+    LoginForm.tsx
+  services/
+    authService.ts
+  store/
+    ...
+  type/
+    auth.ts
+  App.tsx
+  main.tsx
+public/
+  ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Bạn chỉ cần copy/paste vào file `README.md` của dự án.  
+Nếu muốn hướng dẫn chi tiết hơn về từng component, hoặc bổ sung phần API/backend, hãy nói nhé!
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+pnpm install
+# or
+npm install
+# or
+yarn install
 ```
+
+### 2. Start the development server
+
+```bash
+pnpm dev
+# or
+npm run dev
+# or
+yarn dev
+```
+
+### 3. Open your browser
+
+Go to [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
+
+---
+
+## Customization
+
+- **UI Library:** Uses [Ant Design](https://ant.design/). You can customize theme/colors in `main.tsx` or override styles as needed.
+- **Sidebar/Menu:** Edit `src/layout/SiderBar.tsx` to add/remove menu items or change navigation.
+- **Layouts:** Use `MainLayout` for pages with sidebar, or create more layouts in `src/layout/`.
+- **Authentication:** Logic is in `src/context/AuthContext.tsx` and `src/services/authService.ts`.
+
+---
+
+## Linting & Formatting
+
+- ESLint is set up for TypeScript and React.
+- You can expand rules in `eslint.config.js` as your team/project grows.
+
+---
+
+## Build for Production
+
+```bash
+pnpm build
+# or
+npm run build
+# or
+yarn build
+```
+
+---
+
+## Contributing
+
+1. Fork this repo
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes
+4. Push to your fork and submit a Pull Request
+
+---
+
+## License
+
+MIT
+
+---
+
+**Made with ❤️ by [Your Name]**

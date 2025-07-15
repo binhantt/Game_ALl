@@ -10,7 +10,6 @@ type User struct {
 	Password string `gorm:"size:255;not null" json:"-"`
 	FullName string `gorm:"size:100" json:"full_name"`
 	Avatar   string  `gorm:"size:255" json:"avatar"`
-	
 	Balance  float64 `gorm:"default:0" json:"balance"`
 	AccessToken  string `gorm:"size:255" json:"access_token"`
 	RefreshToken string `gorm:"size:255" json:"refresh_token"`

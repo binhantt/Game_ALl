@@ -6,9 +6,5 @@ import (
 )
 
 func SetupAdminRoutes(r *gin.Engine) {
-	adminGroup := r.Group("/api/admin")
-	{
-		adminGroup.POST("/send-verification", controllers.SendVerificationCodeHandler)
-		adminGroup.POST("/verify-code", controllers.VerifyCodeHandler)
-	}
+	
 }

@@ -10,7 +10,6 @@ import (
 func main() {
 	// Initialize database connection (this will continue even if DB connection fails)
 	config.ConnectDB()
-
 	// Run database migrations
 	if config.DB != nil {
 		if err := migrate.AutoMigrate(config.DB); err != nil {
