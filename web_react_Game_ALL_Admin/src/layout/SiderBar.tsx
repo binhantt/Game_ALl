@@ -5,12 +5,13 @@ import {
   UserOutlined,
   AppstoreOutlined,
   BarChartOutlined,
+  TagsOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 const { Sider } = Layout;
 
-const SiderBar: React.FC = () => {
+const SiderBar: React.FC = () => {  
   const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate();
 
@@ -28,7 +29,8 @@ const SiderBar: React.FC = () => {
         <Menu.Item key="dashboard" icon={<DashboardOutlined />}>Dashboard</Menu.Item>
         <Menu.Item key="users" icon={<UserOutlined />}>Người dùng</Menu.Item>
         <Menu.Item key="games" icon={<AppstoreOutlined />}>Trò chơi</Menu.Item>
-        <Menu.Item key="reports" icon={<BarChartOutlined />}>Báo cáo</Menu.Item>
+        <Menu.Item key="genres" icon={<TagsOutlined />}>Thể loại</Menu.Item>
+        <Menu.Item key="reports" icon={<BarChartOutlined />}>Thống kê</Menu.Item>
       </Menu>
     </Sider>
   );
