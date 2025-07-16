@@ -80,6 +80,6 @@ Nếu có thư mục `web_Astro_user`, thực hiện tương tự như frontend 
 
 ## Thông tin liên hệ
 
-- Email: [your-email@example.com]
-- Zalo: [số điện thoại]
+- Email: [doan4503@gmail.com]
+- Zalo: [0329104253]
 - Facebook: [link facebook] 
